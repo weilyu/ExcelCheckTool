@@ -7,7 +7,8 @@ ALLOWED_BG_RGBS = ['00000000']
 
 if __name__ == '__main__':
 
-    for path, _, files in os.walk('.'):
+    root = input('Input directory path: ')
+    for path, _, files in os.walk(root):
         for file in files:
             if file.endswith('xls') or file.endswith('xlsx'):
                 wb = load_workbook(os.path.join(path, file))
